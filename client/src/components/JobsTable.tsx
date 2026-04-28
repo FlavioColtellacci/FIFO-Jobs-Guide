@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Design Philosophy: Industrial Blueprint Aesthetic
@@ -96,7 +97,13 @@ export default function JobsTable() {
             <span className="text-sm font-medium text-foreground">Visa filter</span>
             <Select
               value={selectedVisa}
-              onValueChange={(value) => setSelectedVisa(value as VisaFilter)}
+              onValueChange={(value) => {
+                const nextVisa = value as VisaFilter;
+                setSelectedVisa(nextVisa);
+                trackEvent("visa_filter_used", {
+                  visa_type: nextVisa,
+                });
+              }}
             >
               <SelectTrigger className="w-[220px]">
                 <SelectValue placeholder="Select visa type" />

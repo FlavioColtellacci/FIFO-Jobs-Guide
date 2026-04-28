@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Calculator } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Design Philosophy: Industrial Blueprint Aesthetic
@@ -116,6 +117,12 @@ export default function TaxCalculator() {
                 const value = e.target.value.replace(/[^0-9]/g, '');
                 setSalary(value);
               }}
+              onBlur={() =>
+                trackEvent("calculator_used", {
+                  gross_annual_salary: grossAnnual,
+                  medicare_exempt: medicareExempt,
+                })
+              }
               className="font-mono text-lg bg-input border-border"
               placeholder="110000"
             />
@@ -133,7 +140,13 @@ export default function TaxCalculator() {
             <Switch
               id="medicare-exempt"
               checked={medicareExempt}
-              onCheckedChange={setMedicareExempt}
+              onCheckedChange={(checked) => {
+                setMedicareExempt(checked);
+                trackEvent("calculator_used", {
+                  gross_annual_salary: grossAnnual,
+                  medicare_exempt: checked,
+                });
+              }}
             />
           </div>
         </div>

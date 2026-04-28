@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Building2, ExternalLink, CheckCircle2 } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Design Philosophy: Industrial Blueprint Aesthetic
@@ -79,7 +80,13 @@ export default function RecruitmentAgencies() {
                 <div className="pt-4 border-t border-border">
                   <Button
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
-                    onClick={() => window.open(`https://${agency.website}`, '_blank')}
+                    onClick={() => {
+                      trackEvent("agency_link_click", {
+                        agency_name: agency.name,
+                        agency_domain: agency.website,
+                      });
+                      window.open(`https://${agency.website}`, "_blank");
+                    }}
                   >
                     Visit Website
                     <ExternalLink className="ml-2 h-4 w-4" />
