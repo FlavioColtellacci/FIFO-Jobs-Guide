@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fifo-jobs-guide.vercel.app/sitemap.xml

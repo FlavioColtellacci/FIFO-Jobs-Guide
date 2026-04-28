@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A" />
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="#111827" stroke="#334155" stroke-width="4" />
+  <text x="80" y="190" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">
+    FIFO Jobs Guide Australia
+  </text>
+  <text x="80" y="260" fill="#38BDF8" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600">
+    Multi-Visa FIFO Roles in Western Australia
+  </text>
+  <text x="80" y="330" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="28">
+    417 " 462 " Student " Sponsored Pathways
+  </text>
+  <text x="80" y="410" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24">
+    Salary comparisons " Tax estimator " Recruitment agencies
+  </text>
+  <circle cx="1030" cy="155" r="62" fill="#0284C7" />
+  <circle cx="1030" cy="155" r="34" fill="#0EA5E9" />
+  <rect x="980" y="460" width="130" height="56" rx="28" fill="#0369A1" />
+  <text x="1001" y="495" fill="#E0F2FE" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">
+    WA
+  </text>
+</svg>

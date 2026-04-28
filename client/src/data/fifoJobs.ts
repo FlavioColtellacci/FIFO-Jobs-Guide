@@ -1,3 +1,18 @@
+export type VisaTypeId =
+  | "whv_417"
+  | "whv_462"
+  | "student_500"
+  | "tss_482"
+  | "pr_pathway";
+
+export interface VisaType {
+  id: VisaTypeId;
+  label: string;
+  shortLabel: string;
+  description: string;
+  workRights: string;
+}
+
 export interface FIFOJob {
   id: number;
   title: string;
@@ -5,11 +20,62 @@ export interface FIFOJob {
   salaryMax: number;
   roster: string;
   tickets: string[];
-  visaEligible: boolean;
+  eligibleVisaTypes: VisaTypeId[];
   description: string;
   netMonthlyMin: number;
   netMonthlyMax: number;
 }
+
+export const visaTypes: VisaType[] = [
+  {
+    id: "whv_417",
+    label: "Working Holiday Visa (Subclass 417)",
+    shortLabel: "417",
+    description: "Popular option for backpackers and gap-year workers.",
+    workRights: "Full-time work with employer/time limitations to check per current rules.",
+  },
+  {
+    id: "whv_462",
+    label: "Work and Holiday Visa (Subclass 462)",
+    shortLabel: "462",
+    description: "Alternative WHV stream for eligible passport holders.",
+    workRights: "Comparable short-term work rights; verify country-specific conditions.",
+  },
+  {
+    id: "student_500",
+    label: "Student Visa (Subclass 500)",
+    shortLabel: "Student 500",
+    description: "For international students combining study and work.",
+    workRights: "Work-hour limits can apply during study periods.",
+  },
+  {
+    id: "tss_482",
+    label: "Skills in Demand / TSS (Subclass 482)",
+    shortLabel: "482",
+    description: "Employer-sponsored pathway for skilled roles.",
+    workRights: "Role-specific and employer-sponsored eligibility applies.",
+  },
+  {
+    id: "pr_pathway",
+    label: "PR Pathway (e.g. 189/190/491 progression)",
+    shortLabel: "PR Pathway",
+    description: "Longer-term migration pathways for eligible workers.",
+    workRights: "Varies by stream and nomination requirements.",
+  },
+];
+
+export const roleEligibilityMapping: Record<string, VisaTypeId[]> = {
+  "Driller's Offsider": ["whv_417", "whv_462", "student_500"],
+  "Exploration Driller's Offsider": ["whv_417", "whv_462", "student_500"],
+  "Utilities / Service Attendant": ["whv_417", "whv_462", "student_500"],
+  "Blast Crew (Entry Level)": ["whv_417", "whv_462", "student_500", "tss_482"],
+  "Dump Truck Operator (Trainee)": ["whv_417", "whv_462", "student_500", "tss_482"],
+  "Underground Truck/Nipper": ["whv_417", "whv_462", "student_500", "tss_482"],
+  "Trade Assistant": ["whv_417", "whv_462", "student_500", "tss_482", "pr_pathway"],
+  "FIFO Utilities (Camp Services)": ["whv_417", "whv_462", "student_500"],
+  "Soil Technician": ["whv_417", "whv_462", "student_500", "tss_482"],
+  "General Hand / Labourer": ["whv_417", "whv_462", "student_500"],
+};
 
 export const fifoJobs: FIFOJob[] = [
   {
@@ -19,7 +85,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 140000,
     roster: "2:1 or 4:2",
     tickets: ["White Card", "First Aid & CPR", "Manual C-Class Licence", "Medical & Drug Screening"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["Driller's Offsider"],
     description: "Highest-paying entry-level role. Physically demanding 12-hour shifts. Certificate II Traineeship often provided. Career pathway to Driller ($150k+).",
     netMonthlyMin: 7604,
     netMonthlyMax: 9229
@@ -31,7 +97,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 130000,
     roster: "2:1 or 4:2",
     tickets: ["White Card", "First Aid & CPR", "Manual C-Class Licence", "Medical & Drug Screening"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["Exploration Driller's Offsider"],
     description: "Similar to surface driller's offsider but focused on exploration drilling. Immediate Cert II Traineeship registration. Work with major mining companies.",
     netMonthlyMin: 6979,
     netMonthlyMax: 8354
@@ -43,7 +109,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 120000,
     roster: "2:1",
     tickets: ["White Card", "First Aid & CPR", "Manual C-Class Licence"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["Utilities / Service Attendant"],
     description: "Industry leader (Perenti Group). Recognized long-term career pathway. Competitive terms and rates. Stable FIFO role.",
     netMonthlyMin: 6729,
     netMonthlyMax: 7604
@@ -55,7 +121,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 115000,
     roster: "2:1 or 8:6",
     tickets: ["White Card", "First Aid & CPR", "Manual C-Class Licence", "Medical & Drug Screening"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["Blast Crew (Entry Level)"],
     description: "No previous blast experience required. FIFO ex Perth to Pilbara. Immediate start opportunities. Career pathway to Shot Firer.",
     netMonthlyMin: 6479,
     netMonthlyMax: 7229
@@ -67,7 +133,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 110000,
     roster: "2:1, 2:2, or 8:6",
     tickets: ["White Card", "HR Licence (recommended)", "First Aid & CPR", "Medical & Drug Screening"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["Dump Truck Operator (Trainee)"],
     description: "Many companies provide truck training. 12.5-hour days paid. Weekly pay. Career pathway to experienced operator ($145k-165k).",
     netMonthlyMin: 6104,
     netMonthlyMax: 6979
@@ -79,7 +145,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 110000,
     roster: "7:7 or 8:6",
     tickets: ["White Card", "First Aid & CPR", "Manual C-Class Licence", "Medical & Drug Screening"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["Underground Truck/Nipper"],
     description: "Underground work. Assessment day recruitment process. Training provided. Career pathway to underground operator roles.",
     netMonthlyMin: 5854,
     netMonthlyMax: 6979
@@ -91,7 +157,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 105000,
     roster: "2:1 or 8:6",
     tickets: ["White Card", "First Aid & CPR", "Manual C-Class Licence", "HR Licence (preferred)"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["Trade Assistant"],
     description: "Support qualified tradespeople. Physically demanding. Good pathway to apprenticeship. Diesel TA and Shot Firer TA pay $3,500-4,000/week.",
     netMonthlyMin: 5521,
     netMonthlyMax: 6729
@@ -103,7 +169,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 100000,
     roster: "2:1, 1:1, or lifestyle",
     tickets: ["White Card", "First Aid & CPR", "Food Safety (for kitchen roles)"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["FIFO Utilities (Camp Services)"],
     description: "Easiest entry point. Roles include cleaning, housekeeping, kitchen utility, laundry. Even pay fortnightly. Private rooms, meals provided.",
     netMonthlyMin: 5521,
     netMonthlyMax: 6479
@@ -115,7 +181,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 95000,
     roster: "3:1 (Karratha)",
     tickets: ["White Card", "First Aid & CPR", "Manual C-Class Licence"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["Soil Technician"],
     description: "Full training provided. Karratha-based. Entry-level geotechnical work. Career pathway to senior technician roles.",
     netMonthlyMin: 5229,
     netMonthlyMax: 6104
@@ -127,7 +193,7 @@ export const fifoJobs: FIFOJob[] = [
     salaryMax: 90000,
     roster: "2:1 or 8:6",
     tickets: ["White Card", "First Aid & CPR", "Manual C-Class Licence"],
-    visaEligible: true,
+    eligibleVisaTypes: roleEligibilityMapping["General Hand / Labourer"],
     description: "Most accessible entry-level role. Various duties across site. Good starting point for career progression. Lower pay but easier to secure.",
     netMonthlyMin: 4896,
     netMonthlyMax: 5854
@@ -140,6 +206,7 @@ export interface RecruitmentAgency {
   website: string;
   specialization: string;
   visaFriendly: boolean;
+  supportedVisaTypes: VisaTypeId[];
   description: string;
 }
 
@@ -150,6 +217,7 @@ export const recruitmentAgencies: RecruitmentAgency[] = [
     website: "programmed.com.au",
     specialization: "Entry-level to experienced FIFO roles",
     visaFriendly: true,
+    supportedVisaTypes: ["whv_417", "whv_462", "student_500", "tss_482"],
     description: "Hundreds of mining roles available, seeking experienced, semi-skilled, and entry-level operators. Large national company with strong presence in WA mining."
   },
   {
@@ -158,6 +226,7 @@ export const recruitmentAgencies: RecruitmentAgency[] = [
     website: "hays.com.au",
     specialization: "Resources & Mining recruitment across all levels",
     visaFriendly: true,
+    supportedVisaTypes: ["whv_417", "whv_462", "student_500", "tss_482", "pr_pathway"],
     description: "Entry-level through to executive positions in mining. One of Australia's largest recruitment agencies with dedicated mining division."
   },
   {
@@ -166,6 +235,7 @@ export const recruitmentAgencies: RecruitmentAgency[] = [
     website: "recruitwest.com.au",
     specialization: "FIFO mining, engineering, and logistics in WA",
     visaFriendly: true,
+    supportedVisaTypes: ["whv_417", "whv_462", "student_500"],
     description: "Perth-based agency with strong local connections. Specializes in attracting and retaining candidates for FIFO roles from Perth to the Pilbara."
   }
 ];

@@ -94,9 +94,9 @@ export default function TaxCalculator() {
             <Calculator className="w-6 h-6 text-primary-foreground" />
           </div>
           <div>
-            <CardTitle className="text-2xl">WHM Tax Calculator</CardTitle>
+            <CardTitle className="text-2xl">FIFO Tax Estimator</CardTitle>
             <CardDescription className="text-muted-foreground">
-              Calculate your net take-home pay for 2025-2026
+              Indicative take-home estimate using simplified WHM baseline settings
             </CardDescription>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function TaxCalculator() {
                 Medicare Levy Exempt
               </Label>
               <p className="text-xs text-muted-foreground">
-                417 visa holders are typically exempt
+                Common for many 417/462 situations, but not universal
               </p>
             </div>
             <Switch
@@ -214,6 +214,19 @@ export default function TaxCalculator() {
             <li>$135,001 - $190,000: <span className="text-primary">$33,750 + 37%</span> over $135k</li>
             <li>$190,001+: <span className="text-primary">$54,100 + 45%</span> over $190k</li>
           </ul>
+        </div>
+
+        <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-xs text-amber-950 space-y-2">
+          <p className="font-semibold">Important disclaimer</p>
+          <p>
+            This tool is educational only and is not tax, migration, or career advice.
+            It uses a simplified WHM model and does not include all individual deductions,
+            offsets, superannuation, residency status checks, treaty impacts, or visa-specific conditions.
+          </p>
+          <p>
+            Always confirm your tax and visa obligations with official ATO/Home Affairs resources
+            and a licensed migration or tax professional before making financial decisions.
+          </p>
         </div>
       </CardContent>
     </Card>

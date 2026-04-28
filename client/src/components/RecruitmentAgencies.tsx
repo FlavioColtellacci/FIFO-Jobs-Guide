@@ -1,4 +1,4 @@
-import { recruitmentAgencies } from "@/data/fifoJobs";
+import { recruitmentAgencies, visaTypes, type VisaTypeId } from "@/data/fifoJobs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,11 @@ import { Building2, ExternalLink, CheckCircle2 } from "lucide-react";
  */
 
 export default function RecruitmentAgencies() {
+  const getVisaShortLabel = (visaId: VisaTypeId) => {
+    const visa = visaTypes.find((entry) => entry.id === visaId);
+    return visa?.shortLabel ?? visaId;
+  };
+
   return (
     <Card className="bg-card border-border">
       <CardHeader>
@@ -22,7 +27,7 @@ export default function RecruitmentAgencies() {
           <div>
             <CardTitle className="text-2xl">Top Recruitment Agencies</CardTitle>
             <CardDescription className="text-muted-foreground">
-              Perth-based agencies specializing in FIFO placements for 417 visa holders
+              Perth-based agencies supporting FIFO placements across multiple visa pathways
             </CardDescription>
           </div>
         </div>
@@ -42,7 +47,7 @@ export default function RecruitmentAgencies() {
                       {agency.visaFriendly && (
                         <div className="flex items-center gap-1 mt-1">
                           <CheckCircle2 className="w-4 h-4 text-primary" />
-                          <span className="text-xs text-primary font-semibold">417 Visa Friendly</span>
+                          <span className="text-xs text-primary font-semibold">Visa-Friendly Recruiter</span>
                         </div>
                       )}
                     </div>
@@ -62,6 +67,13 @@ export default function RecruitmentAgencies() {
                   <p className="text-sm text-muted-foreground">
                     {agency.description}
                   </p>
+                  <div className="flex flex-wrap gap-2">
+                    {agency.supportedVisaTypes.map((visaId) => (
+                      <Badge key={visaId} variant="outline" className="text-[10px]">
+                        {getVisaShortLabel(visaId)}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="pt-4 border-t border-border">
@@ -98,7 +110,7 @@ export default function RecruitmentAgencies() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-primary font-bold">•</span>
-              <span>The 6-month employer limitation doesn't apply when working through agencies (different placements = different employers)</span>
+              <span>Employer limits and conditions vary by visa type, so confirm your visa conditions before accepting a contract</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-primary font-bold">•</span>

@@ -48,7 +48,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="font-bold text-lg text-sidebar-foreground">FIFO Jobs Guide</h1>
-                <p className="text-xs text-muted-foreground">417 Visa • Western Australia</p>
+                <p className="text-xs text-muted-foreground">Australia Multi-Visa • Western Australia</p>
               </div>
             </div>
             
@@ -85,6 +85,14 @@ export default function Home() {
               >
                 Agencies
               </Button>
+              <Button
+                variant={activeSection === "faq" ? "default" : "ghost"}
+                size="sm"
+                onClick={() => scrollToSection("faq")}
+                className="text-sm"
+              >
+                FAQ
+              </Button>
             </nav>
           </div>
         </div>
@@ -113,7 +121,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl text-muted-foreground">
-              Comprehensive research on the highest-paying entry-level FIFO opportunities in Western Australia for 417 Working Holiday Visa holders. No experience required.
+              Practical research on high-paying entry-level FIFO opportunities in Western Australia for people across common visa pathways, including WHV, Student, and selected sponsored routes.
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -161,7 +169,7 @@ export default function Home() {
             <div className="text-center space-y-2">
               <CheckCircle2 className="w-8 h-8 text-primary mx-auto" />
               <p className="text-3xl font-mono font-bold text-foreground">417</p>
-              <p className="text-sm text-muted-foreground">Visa Eligible</p>
+              <p className="text-sm text-muted-foreground">Original WHV Focus</p>
             </div>
           </div>
         </div>
@@ -175,7 +183,7 @@ export default function Home() {
               Why FIFO Mining?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Fly-In Fly-Out (FIFO) mining jobs in Western Australia offer some of the highest-paying entry-level opportunities for Working Holiday Visa holders. Earn 2-3x more than typical backpacker jobs while gaining valuable experience in Australia's booming mining sector.
+              Fly-In Fly-Out (FIFO) mining jobs in Western Australia can provide high income, structured rosters, and strong progression for candidates across multiple visa categories. Eligibility still varies by employer, roster, and visa conditions.
             </p>
           </div>
           
@@ -223,15 +231,15 @@ export default function Home() {
               <div className="flex items-start gap-4">
                 <AlertCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div className="space-y-2">
-                  <h4 className="font-bold text-foreground">Important Information for 417 Visa Holders</h4>
+                  <h4 className="font-bold text-foreground">Important Multi-Visa Notes</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <span className="text-primary font-bold">•</span>
-                      <span><strong className="text-foreground">6-Month Limitation:</strong> You can only work for one employer for a maximum of 6 months. However, working through recruitment agencies on different placements counts as different employers.</span>
+                      <span><strong className="text-foreground">Visa conditions differ:</strong> WHV, Student, and sponsored visas have different work rights and employer constraints.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary font-bold">•</span>
-                      <span><strong className="text-foreground">Regional Work:</strong> All FIFO mining work in WA counts as "specified work" for second/third visa eligibility.</span>
+                      <span><strong className="text-foreground">Regional and renewal rules:</strong> Some FIFO work can support future visa steps, but this depends on current government policy.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary font-bold">•</span>
@@ -239,7 +247,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary font-bold">•</span>
-                      <span><strong className="text-foreground">Financial Buffer:</strong> Save at least $5,000 before arriving in Perth to cover initial costs (rent, bond, tickets, medical). Budget $1,500-2,000 for essential tickets (White Card, First Aid, HR Licence).</span>
+                      <span><strong className="text-foreground">Professional advice:</strong> Use licensed migration and tax professionals for final decisions on visas, contracts, and tax planning.</span>
                     </li>
                   </ul>
                 </div>
@@ -257,7 +265,7 @@ export default function Home() {
               Top 10 Entry-Level FIFO Jobs
             </h2>
             <p className="text-lg text-muted-foreground">
-              Ranked by maximum annual salary. All roles accept 417 visa holders with no prior mining experience.
+              Ranked by maximum annual salary. Use the visa filter to check indicative role eligibility for your pathway.
             </p>
           </div>
           
@@ -298,7 +306,7 @@ export default function Home() {
               Calculate Your Take-Home Pay
             </h2>
             <p className="text-lg text-muted-foreground">
-              Use our calculator to estimate your net monthly income based on 2025-2026 Australian tax rates for Working Holiday Makers.
+              Use the estimator for indicative take-home numbers. Assumptions are simplified and should be verified for your exact tax and visa circumstances.
             </p>
           </div>
           
@@ -316,11 +324,44 @@ export default function Home() {
               Where to Apply
             </h2>
             <p className="text-lg text-muted-foreground">
-              These Perth-based recruitment agencies specialize in FIFO mining placements and actively work with 417 visa holders.
+              These Perth-based recruitment agencies specialize in FIFO mining placements and often work across multiple visa types.
             </p>
           </div>
           
           <RecruitmentAgencies />
+        </div>
+      </section>
+
+      <section id="faq" className="py-16 bg-background">
+        <div className="container mx-auto space-y-8">
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <h2 className="text-4xl font-bold text-foreground">
+              FIFO Jobs Visa FAQ (WA)
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Common questions from job seekers researching FIFO mining work in Western Australia.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto grid gap-4">
+            <Card className="bg-card border-border">
+              <CardContent className="pt-6 space-y-2">
+                <h3 className="font-semibold text-foreground">Can I apply for FIFO jobs in WA on a Working Holiday visa?</h3>
+                <p className="text-sm text-muted-foreground">Many entry-level roles accept WHV candidates, but employer duration and specific work requirements can apply depending on your visa subclass and current government rules.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-card border-border">
+              <CardContent className="pt-6 space-y-2">
+                <h3 className="font-semibold text-foreground">Are student visa holders eligible for FIFO mining jobs?</h3>
+                <p className="text-sm text-muted-foreground">Some employers consider student visa holders, but study-period work-hour limits and roster compatibility can be a constraint. Confirm your rights before accepting an offer.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-card border-border">
+              <CardContent className="pt-6 space-y-2">
+                <h3 className="font-semibold text-foreground">Do FIFO roles help with longer-term migration pathways?</h3>
+                <p className="text-sm text-muted-foreground">Potentially. Some roles can contribute to employer sponsorship or points-tested pathways, but eligibility depends on occupation lists, location, and formal nomination criteria.</p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
       
@@ -334,7 +375,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="font-bold text-sidebar-foreground">FIFO Jobs Guide</h3>
-                <p className="text-xs text-muted-foreground">For 417 Visa Holders in Western Australia</p>
+                <p className="text-xs text-muted-foreground">For Multi-Visa Job Seekers in Western Australia</p>
               </div>
             </div>
             
@@ -345,6 +386,11 @@ export default function Home() {
               <p className="text-xs text-muted-foreground mt-1">
                 Data sourced from SEEK, Indeed, ATO, and recruitment agencies
               </p>
+              <div className="mt-3 flex gap-3 justify-center md:justify-end text-xs">
+                <a className="text-primary hover:underline" href="/disclaimer">Disclaimer</a>
+                <a className="text-primary hover:underline" href="/privacy-policy">Privacy Policy</a>
+                <a className="text-primary hover:underline" href="/terms">Terms</a>
+              </div>
             </div>
           </div>
         </div>

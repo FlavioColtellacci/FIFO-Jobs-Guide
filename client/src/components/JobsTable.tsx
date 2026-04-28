@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { fifoJobs, type FIFOJob } from "@/data/fifoJobs";
+import { fifoJobs, visaTypes, type VisaTypeId } from "@/data/fifoJobs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowUpDown, CheckCircle2, Briefcase } from "lucide-react";
+import { ArrowUpDown, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 /**
  * Design Philosophy: Industrial Blueprint Aesthetic
@@ -15,11 +22,13 @@ import { Button } from "@/components/ui/button";
 
 type SortField = 'title' | 'salaryMin' | 'salaryMax' | 'netMonthlyMin';
 type SortDirection = 'asc' | 'desc';
+type VisaFilter = "all" | VisaTypeId;
 
 export default function JobsTable() {
   const [sortField, setSortField] = useState<SortField>('salaryMax');
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
+  const [selectedVisa, setSelectedVisa] = useState<VisaFilter>("all");
   
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -30,7 +39,11 @@ export default function JobsTable() {
     }
   };
   
-  const sortedJobs = [...fifoJobs].sort((a, b) => {
+  const filteredJobs = fifoJobs.filter((job) =>
+    selectedVisa === "all" ? true : job.eligibleVisaTypes.includes(selectedVisa)
+  );
+
+  const sortedJobs = [...filteredJobs].sort((a, b) => {
     const aValue = a[sortField];
     const bValue = b[sortField];
     
@@ -55,6 +68,11 @@ export default function JobsTable() {
       maximumFractionDigits: 0
     }).format(amount);
   };
+
+  const getVisaShortLabel = (visaId: VisaTypeId) => {
+    const visa = visaTypes.find((entry) => entry.id === visaId);
+    return visa?.shortLabel ?? visaId;
+  };
   
   return (
     <Card className="bg-card border-border">
@@ -66,8 +84,32 @@ export default function JobsTable() {
           <div>
             <CardTitle className="text-2xl">Top 10 FIFO Jobs Comparison</CardTitle>
             <CardDescription className="text-muted-foreground">
-              Entry-level roles for 417 visa holders • Click columns to sort
+              Multi-visa eligible entry-level roles in WA FIFO • Click columns to sort
             </CardDescription>
+          </div>
+        </div>
+        <div className="flex flex-col gap-3 pt-4 md:flex-row md:items-center md:justify-between">
+          <div className="text-sm text-muted-foreground">
+            Showing <span className="font-semibold text-foreground">{sortedJobs.length}</span> roles
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-foreground">Visa filter</span>
+            <Select
+              value={selectedVisa}
+              onValueChange={(value) => setSelectedVisa(value as VisaFilter)}
+            >
+              <SelectTrigger className="w-[220px]">
+                <SelectValue placeholder="Select visa type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All visa pathways</SelectItem>
+                {visaTypes.map((visa) => (
+                  <SelectItem key={visa.id} value={visa.id}>
+                    {visa.shortLabel} - {visa.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </CardHeader>
@@ -117,7 +159,7 @@ export default function JobsTable() {
                 </th>
                 <th className="text-center py-4 px-4">
                   <span className="font-semibold text-sm uppercase tracking-wide">
-                    417 Visa
+                    Eligibility
                   </span>
                 </th>
               </tr>
@@ -170,9 +212,22 @@ export default function JobsTable() {
                     </Badge>
                   </td>
                   <td className="py-4 px-4 text-center">
-                    {job.visaEligible && (
-                      <CheckCircle2 className="w-6 h-6 text-primary mx-auto" />
-                    )}
+                    <div className="flex flex-wrap justify-center gap-1">
+                      {job.eligibleVisaTypes.slice(0, 2).map((visaId) => (
+                        <Badge
+                          key={visaId}
+                          variant={selectedVisa === visaId ? "default" : "secondary"}
+                          className="text-[10px]"
+                        >
+                          {getVisaShortLabel(visaId)}
+                        </Badge>
+                      ))}
+                      {job.eligibleVisaTypes.length > 2 && (
+                        <Badge variant="outline" className="text-[10px]">
+                          +{job.eligibleVisaTypes.length - 2}
+                        </Badge>
+                      )}
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -192,14 +247,22 @@ export default function JobsTable() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-foreground">{job.title}</h3>
-                      <Badge variant="outline" className="font-mono text-xs mt-1">
-                        {job.roster}
-                      </Badge>
+                      <div className="flex flex-wrap items-center gap-1 mt-1">
+                        <Badge variant="outline" className="font-mono text-xs">
+                          {job.roster}
+                        </Badge>
+                        {job.eligibleVisaTypes.slice(0, 2).map((visaId) => (
+                          <Badge
+                            key={visaId}
+                            variant={selectedVisa === visaId ? "default" : "secondary"}
+                            className="text-[10px]"
+                          >
+                            {getVisaShortLabel(visaId)}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  {job.visaEligible && (
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                  )}
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4 pt-3 border-t border-border">
@@ -232,6 +295,17 @@ export default function JobsTable() {
                       +{job.tickets.length - 3} more
                     </Badge>
                   )}
+                </div>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {job.eligibleVisaTypes.map((visaId) => (
+                    <Badge
+                      key={visaId}
+                      variant={selectedVisa === visaId ? "default" : "outline"}
+                      className="text-[10px]"
+                    >
+                      Eligible: {getVisaShortLabel(visaId)}
+                    </Badge>
+                  ))}
                 </div>
               </CardContent>
             </Card>
