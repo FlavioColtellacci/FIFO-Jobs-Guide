@@ -52,7 +52,7 @@ jobs:
           git checkout -B chore/data-refresh
           git add data/updates.pending.json data/roles.base.json
           git commit -m "chore(data): refresh proposed source signals"
-          git push --force-with-lease origin chore/data-refresh
+          git push --force origin chore/data-refresh
           echo "no_changes=false" >> "$GITHUB_OUTPUT"
 
       - name: Publish manual PR link
