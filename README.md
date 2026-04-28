@@ -102,7 +102,7 @@ Use this sequence to take the site live with safe preview/prod settings:
 2. Configure domains
    - Add your primary domain (example: `fifojobsguide.com`)
    - Add `www` and set redirect to primary domain
-   - If you do not have a domain yet, use `https://fifo-jobs-guide.vercel.app`
+   - Production domain: `https://www.fifojobsguide.com`
 3. Configure environment variables
    - `VITE_ANALYTICS_ENDPOINT` (optional analytics host)
    - `VITE_ANALYTICS_WEBSITE_ID` (optional analytics website id)

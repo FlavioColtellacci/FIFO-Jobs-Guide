@@ -9,7 +9,12 @@
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "data:discover": "tsx scripts/discover-sources.ts",
+    "data:extract": "tsx scripts/extract-signals.ts",
+    "data:propose": "tsx scripts/build-proposed-update.ts",
+    "data:apply": "tsx scripts/apply-approved-update.ts",
+    "data:refresh": "pnpm data:discover && pnpm data:extract && pnpm data:propose"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

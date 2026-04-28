@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fifo-jobs-guide.vercel.app/</loc>
+    <loc>https://www.fifojobsguide.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fifo-jobs-guide.vercel.app/disclaimer</loc>
+    <loc>https://www.fifojobsguide.com/disclaimer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fifo-jobs-guide.vercel.app/privacy-policy</loc>
+    <loc>https://www.fifojobsguide.com/privacy-policy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fifo-jobs-guide.vercel.app/terms</loc>
+    <loc>https://www.fifojobsguide.com/terms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

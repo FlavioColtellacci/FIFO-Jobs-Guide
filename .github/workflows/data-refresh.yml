@@ -1,0 +1,54 @@
+name: Data Refresh
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.4.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run discovery and proposal pipeline
+        env:
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+        run: pnpm data:refresh
+
+      - name: Create pull request for reviewed updates
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/data-refresh
+          commit-message: "chore(data): refresh proposed source signals"
+          title: "chore(data): refresh proposed source signals"
+          body: |
+            Automated data refresh proposal from Brave discovery pipeline.
+
+            Review checklist:
+            - Validate `data/updates.pending.json` confidence levels
+            - Cross-check salary and roster changes against trusted sources
+            - Merge only after manual verification
+          add-paths: |
+            data/updates.pending.json
+            data/roles.base.json
+          delete-branch: true

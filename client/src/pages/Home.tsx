@@ -5,6 +5,7 @@ import RecruitmentAgencies from "@/components/RecruitmentAgencies";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { DATA_SNAPSHOT_DATE, DATA_UPDATE_FREQUENCY } from "@/data/fifoJobs";
 import { 
   HardHat, 
   Calculator, 
@@ -381,10 +382,13 @@ export default function Home() {
             
             <div className="text-center md:text-right">
               <p className="text-sm text-muted-foreground">
-                Research compiled February 2026
+                Data snapshot: {DATA_SNAPSHOT_DATE}
               </p>
               <p className="text-xs text-muted-foreground mt-1">
                 Data sourced from SEEK, Indeed, ATO, and recruitment agencies
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Freshness policy: {DATA_UPDATE_FREQUENCY}
               </p>
               <div className="mt-3 flex gap-3 justify-center md:justify-end text-xs">
                 <a className="text-primary hover:underline" href="/disclaimer">Disclaimer</a>

@@ -9,3 +9,5 @@ coverage/
 .vite/
 *.tsbuildinfo
 .vercel
+data/discovery.raw.json
+data/extracted.raw.json

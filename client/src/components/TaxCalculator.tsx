@@ -216,8 +216,8 @@ export default function TaxCalculator() {
           </ul>
         </div>
 
-        <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-xs text-amber-950 space-y-2">
-          <p className="font-semibold">Important disclaimer</p>
+        <div className="rounded-lg border border-amber-500/60 bg-amber-500/10 p-4 text-xs text-amber-900 dark:text-amber-100 space-y-2">
+          <p className="font-semibold text-amber-800 dark:text-amber-50">Important disclaimer</p>
           <p>
             This tool is educational only and is not tax, migration, or career advice.
             It uses a simplified WHM model and does not include all individual deductions,

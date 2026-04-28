@@ -1,0 +1,66 @@
+{
+  "lastUpdated": "2026-04-28",
+  "updatePolicy": "Weekly reviewed updates via GitHub Actions",
+  "roles": [
+    {
+      "id": "drillers-offsider",
+      "title": "Driller's Offsider",
+      "aliases": ["Drillers Offsider", "Exploration Driller's Offsider"],
+      "location": "Western Australia",
+      "salaryRangeAud": {
+        "min": 120000,
+        "max": 140000
+      },
+      "rosters": ["2:1", "4:2"],
+      "visaEligibility": ["whv_417", "whv_462", "student_500"],
+      "sources": [
+        {
+          "url": "https://www.seek.com.au",
+          "publisher": "SEEK",
+          "capturedAt": "2026-04-28",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "dump-truck-operator-trainee",
+      "title": "Dump Truck Operator (Trainee)",
+      "aliases": ["Trainee Dump Truck Operator", "Entry Level Dump Truck Operator"],
+      "location": "Western Australia",
+      "salaryRangeAud": {
+        "min": 95000,
+        "max": 110000
+      },
+      "rosters": ["2:1", "2:2", "8:6"],
+      "visaEligibility": ["whv_417", "whv_462", "student_500", "tss_482"],
+      "sources": [
+        {
+          "url": "https://www.indeed.com.au",
+          "publisher": "Indeed",
+          "capturedAt": "2026-04-28",
+          "confidence": 0.75
+        }
+      ]
+    },
+    {
+      "id": "trade-assistant",
+      "title": "Trade Assistant",
+      "aliases": ["FIFO Trade Assistant", "Mining Trade Assistant"],
+      "location": "Western Australia",
+      "salaryRangeAud": {
+        "min": 85000,
+        "max": 105000
+      },
+      "rosters": ["2:1", "8:6"],
+      "visaEligibility": ["whv_417", "whv_462", "student_500", "tss_482", "pr_pathway"],
+      "sources": [
+        {
+          "url": "https://www.seek.com.au",
+          "publisher": "SEEK",
+          "capturedAt": "2026-04-28",
+          "confidence": 0.8
+        }
+      ]
+    }
+  ]
+}

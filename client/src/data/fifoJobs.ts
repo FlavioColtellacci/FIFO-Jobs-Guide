@@ -13,6 +13,9 @@ export interface VisaType {
   workRights: string;
 }
 
+export const DATA_SNAPSHOT_DATE = "2026-04-28";
+export const DATA_UPDATE_FREQUENCY = "Weekly reviewed updates";
+
 export interface FIFOJob {
   id: number;
   title: string;
