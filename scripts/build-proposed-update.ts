@@ -39,6 +39,10 @@ const ROOT = process.cwd();
 const BASE_FILE = path.join(ROOT, "data", "roles.base.json");
 const EXTRACTED_FILE = path.join(ROOT, "data", "extracted.raw.json");
 const OUTPUT_FILE = path.join(ROOT, "data", "updates.pending.json");
+const TRUSTED_PUBLISHERS = ["seek.com.au", "indeed.com.au", "hays.com.au", "programmed.com.au", "recruitwest.com.au"];
+const MIN_CONFIDENCE_SALARY = 0.8;
+const MIN_CONFIDENCE_ROSTER = 0.7;
+const MIN_CONFIDENCE_SOURCE = 0.65;
 
 function normalize(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9 ]/g, " ");
@@ -50,6 +54,10 @@ function roleMatchesSignal(role: BaseRole, signal: ExtractedSignal): boolean {
   return terms.some((term) => term.split(" ").filter(Boolean).every((word) => haystack.includes(word)));
 }
 
+function isTrustedPublisher(publisherHint: string): boolean {
+  return TRUSTED_PUBLISHERS.some((trusted) => publisherHint.includes(trusted));
+}
+
 function buildChanges(role: BaseRole, signal: ExtractedSignal): PendingChange[] {
   const changes: PendingChange[] = [];
   const evidence = {
@@ -59,7 +67,7 @@ function buildChanges(role: BaseRole, signal: ExtractedSignal): PendingChange[] 
     capturedAt: signal.capturedAt,
   };
 
-  if (signal.salaryHintsAud.length >= 2 && signal.confidence >= 0.65) {
+  if (signal.salaryHintsAud.length >= 2 && signal.confidence >= MIN_CONFIDENCE_SALARY && isTrustedPublisher(signal.publisherHint)) {
     const salaryMin = Math.min(...signal.salaryHintsAud);
     const salaryMax = Math.max(...signal.salaryHintsAud);
     changes.push({
@@ -72,7 +80,7 @@ function buildChanges(role: BaseRole, signal: ExtractedSignal): PendingChange[] 
     });
   }
 
-  if (signal.rosterHints.length > 0 && signal.confidence >= 0.6) {
+  if (signal.rosterHints.length > 0 && signal.confidence >= MIN_CONFIDENCE_ROSTER) {
     changes.push({
       roleId: role.id,
       roleTitle: role.title,
@@ -83,7 +91,7 @@ function buildChanges(role: BaseRole, signal: ExtractedSignal): PendingChange[] 
     });
   }
 
-  if (signal.confidence >= 0.55) {
+  if (signal.confidence >= MIN_CONFIDENCE_SOURCE) {
     changes.push({
       roleId: role.id,
       roleTitle: role.title,
@@ -128,6 +136,13 @@ async function main() {
       potentialSalaryChanges: uniqueChanges.filter((c) => c.changeType === "salary_range_signal").length,
       potentialRosterSignals: uniqueChanges.filter((c) => c.changeType === "roster_signal").length,
       lowConfidenceItems: uniqueChanges.filter((c) => c.confidence < 0.65).length,
+    },
+    guardrails: {
+      salaryRequiresTrustedPublisher: true,
+      minConfidenceSalary: MIN_CONFIDENCE_SALARY,
+      minConfidenceRoster: MIN_CONFIDENCE_ROSTER,
+      minConfidenceSource: MIN_CONFIDENCE_SOURCE,
+      trustedPublishers: TRUSTED_PUBLISHERS,
     },
     changes: uniqueChanges,
   };

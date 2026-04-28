@@ -29,9 +29,10 @@ type PendingChange = {
 const ROOT = process.cwd();
 const BASE_FILE = path.join(ROOT, "data", "roles.base.json");
 const PENDING_FILE = path.join(ROOT, "data", "updates.pending.json");
+const TRUSTED_PUBLISHERS = ["seek.com.au", "indeed.com.au", "hays.com.au", "programmed.com.au", "recruitwest.com.au"];
 
 async function main() {
-  const confidenceThreshold = Number(process.env.AUTO_APPLY_MIN_CONFIDENCE ?? "0.8");
+  const confidenceThreshold = Number(process.env.AUTO_APPLY_MIN_CONFIDENCE ?? "0.9");
 
   const baseRaw = await readFile(BASE_FILE, "utf8");
   const pendingRaw = await readFile(PENDING_FILE, "utf8");
@@ -41,10 +42,12 @@ async function main() {
 
   for (const change of pending.changes) {
     if (change.confidence < confidenceThreshold) continue;
+    const trustedPublisher = TRUSTED_PUBLISHERS.some((trusted) => change.evidence.publisherHint.includes(trusted));
     const role = base.roles.find((item) => item.id === change.roleId);
     if (!role) continue;
 
     if (change.changeType === "salary_range_signal") {
+      if (!trustedPublisher) continue;
       const salary = change.proposedValue as { min?: number; max?: number };
       if (typeof salary.min === "number" && typeof salary.max === "number") {
         role.salaryRangeAud = { min: salary.min, max: salary.max };
@@ -60,12 +63,15 @@ async function main() {
 
     if (change.changeType === "new_source") {
       role.sources = role.sources ?? [];
-      role.sources.push({
-        url: change.evidence.url,
-        publisher: change.evidence.publisherHint,
-        capturedAt: change.evidence.capturedAt,
-        confidence: change.confidence,
-      });
+      const alreadyExists = role.sources.some((source) => source.url === change.evidence.url);
+      if (!alreadyExists) {
+        role.sources.push({
+          url: change.evidence.url,
+          publisher: change.evidence.publisherHint,
+          capturedAt: change.evidence.capturedAt,
+          confidence: change.confidence,
+        });
+      }
     }
   }
 
