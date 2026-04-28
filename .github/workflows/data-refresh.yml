@@ -10,7 +10,6 @@ env:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   refresh-data:
@@ -39,20 +38,24 @@ jobs:
           BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
         run: pnpm data:refresh
 
-      - name: Create pull request for reviewed updates
-        uses: peter-evans/create-pull-request@v7
-        with:
-          branch: chore/data-refresh
-          commit-message: "chore(data): refresh proposed source signals"
-          title: "chore(data): refresh proposed source signals"
-          body: |
-            Automated data refresh proposal from Brave discovery pipeline.
+      - name: Commit and push refresh branch
+        id: push_refresh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-            Review checklist:
-            - Validate `data/updates.pending.json` confidence levels
-            - Cross-check salary and roster changes against trusted sources
-            - Merge only after manual verification
-          add-paths: |
-            data/updates.pending.json
-            data/roles.base.json
-          delete-branch: true
+          if git diff --quiet -- data/updates.pending.json data/roles.base.json; then
+            echo "no_changes=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git checkout -B chore/data-refresh
+          git add data/updates.pending.json data/roles.base.json
+          git commit -m "chore(data): refresh proposed source signals"
+          git push --force-with-lease origin chore/data-refresh
+          echo "no_changes=false" >> "$GITHUB_OUTPUT"
+
+      - name: Publish manual PR link
+        if: steps.push_refresh.outputs.no_changes == 'false'
+        run: |
+          echo "Open PR: https://github.com/${{ github.repository }}/compare/main...chore/data-refresh?expand=1" >> "$GITHUB_STEP_SUMMARY"
