@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-28T19:44:23.861Z",
+  "generatedAt": "2026-05-17T08:17:46.023Z",
   "reviewRequired": true,
   "summary": {
-    "newSources": 17,
+    "newSources": 18,
     "potentialSalaryChanges": 0,
-    "potentialRosterSignals": 3,
+    "potentialRosterSignals": 2,
     "lowConfidenceItems": 0
   },
   "guardrails": {
@@ -26,47 +26,15 @@
       "roleTitle": "Driller's Offsider",
       "changeType": "new_source",
       "proposedValue": {
-        "url": "https://au.indeed.com/q-driller-offsider-fifo-jobs.html",
-        "publisher": "au.indeed.com"
+        "url": "https://au.seek.com/driller-offsider-fifo-jobs",
+        "publisher": "au.seek.com"
       },
       "confidence": 0.65,
       "evidence": {
-        "url": "https://au.indeed.com/q-driller-offsider-fifo-jobs.html",
-        "publisherHint": "au.indeed.com",
-        "snippet": "Salary Search: Underground Drillers Offsider | FIFO from Perth salaries in Perth WA · See popular questions &amp; answers about Swick Mining Services · Calling all Entry-Level and Experienced Driller’s Offsiders.",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
-      }
-    },
-    {
-      "roleId": "drillers-offsider",
-      "roleTitle": "Driller's Offsider",
-      "changeType": "roster_signal",
-      "proposedValue": [
-        "2:1",
-        "4:2"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "url": "https://au.indeed.com/q-fifo-entry-level-driller-offsider-jobs.html",
-        "publisherHint": "au.indeed.com",
-        "snippet": "Salary Search: Queensland Driller&#x27;s Offsiders - Entry Level Traineeships! salaries in Brisbane QLD · Roster Options: 2:1 or 4:2 (site &amp; client dependent). Work Types: A mix of client site and exploration projects (must be flexible, with both caravan &amp; camp site… · View all DDH1 Drilling PTY LTD jobs - Western Australia jobs - Driller jobs in Western Australia",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
-      }
-    },
-    {
-      "roleId": "drillers-offsider",
-      "roleTitle": "Driller's Offsider",
-      "changeType": "new_source",
-      "proposedValue": {
-        "url": "https://au.indeed.com/q-fifo-entry-level-driller-offsider-jobs.html",
-        "publisher": "au.indeed.com"
-      },
-      "confidence": 0.75,
-      "evidence": {
-        "url": "https://au.indeed.com/q-fifo-entry-level-driller-offsider-jobs.html",
-        "publisherHint": "au.indeed.com",
-        "snippet": "Salary Search: Queensland Driller&#x27;s Offsiders - Entry Level Traineeships! salaries in Brisbane QLD · Roster Options: 2:1 or 4:2 (site &amp; client dependent). Work Types: A mix of client site and exploration projects (must be flexible, with both caravan &amp; camp site… · View all DDH1 Drilling PTY LTD jobs - Western Australia jobs - Driller jobs in Western Australia",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
+        "url": "https://au.seek.com/driller-offsider-fifo-jobs",
+        "publisherHint": "au.seek.com",
+        "snippet": "Earn <strong>$110K+</strong> fast and progress to Driller roles quickly. subClassification: Mining - Drill &amp; BlastMining - Drill &amp; Blast · classification: Mining, Resources &amp; Energy(Mining, Resources &amp; Energy) ...",
+        "capturedAt": "2026-05-17T08:17:42.938Z"
       }
     },
     {
@@ -81,56 +49,8 @@
       "evidence": {
         "url": "https://au.jooble.org/salary/fifo-drillers-offsider",
         "publisherHint": "au.jooble.org",
-        "snippet": "If we look at the Fifo drillers offsider salary statistics in Australia as of 14 May 2025, the represented employee makes $109,324; to be more precise pay rate is <strong>$9,110 per month, $2,102 per week, or $57.54 per hour</strong>. We have researched the job market for this profession in detail and derived ...",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
-      }
-    },
-    {
-      "roleId": "drillers-offsider",
-      "roleTitle": "Driller's Offsider",
-      "changeType": "new_source",
-      "proposedValue": {
-        "url": "https://au.indeed.com/q-drillers-offsider-l-western-australia-jobs.html",
-        "publisher": "au.indeed.com"
-      },
-      "confidence": 0.65,
-      "evidence": {
-        "url": "https://au.indeed.com/q-drillers-offsider-l-western-australia-jobs.html",
-        "publisherHint": "au.indeed.com",
-        "snippet": "Salary Search: Driller Traineeship salaries in Kalgoorlie WA · WA Applicants for Drillers and Experienced offsiders will be fast tracked! FIFO Positions available, all meals and accommodation provided.",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
-      }
-    },
-    {
-      "roleId": "drillers-offsider",
-      "roleTitle": "Driller's Offsider",
-      "changeType": "new_source",
-      "proposedValue": {
-        "url": "https://au.indeed.com/q-entry-level-drillers-offsider-l-western-australia-jobs.html",
-        "publisher": "au.indeed.com"
-      },
-      "confidence": 0.65,
-      "evidence": {
-        "url": "https://au.indeed.com/q-entry-level-drillers-offsider-l-western-australia-jobs.html",
-        "publisherHint": "au.indeed.com",
-        "snippet": "Salary Search: Underground Drillers Offsider | FIFO from Perth salaries in Perth WA",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
-      }
-    },
-    {
-      "roleId": "drillers-offsider",
-      "roleTitle": "Driller's Offsider",
-      "changeType": "new_source",
-      "proposedValue": {
-        "url": "https://www.seek.com.au/drillers-offsider-fifo-jobs",
-        "publisher": "seek.com.au"
-      },
-      "confidence": 0.65,
-      "evidence": {
-        "url": "https://www.seek.com.au/drillers-offsider-fifo-jobs",
-        "publisherHint": "seek.com.au",
-        "snippet": "👷 · subClassification: Mining - Exploration &amp; GeoscienceMining - Exploration &amp; Geoscience · classification: Mining, Resources &amp; Energy(Mining, Resources &amp; Energy) ... Kick-start your career with DDH1 Drilling and a <strong>six-figure salary</strong>!",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
+        "snippet": "If we look at the Fifo drillers offsider salary statistics in Australia as of 13 May 2026, the represented employee makes $116,436; to be more precise pay rate is <strong>$9,703 per month, $2,239 per week, or $61.28 per hour</strong>. We have researched the job market for this profession in detail and derived ...",
+        "capturedAt": "2026-05-17T08:17:42.938Z"
       }
     },
     {
@@ -146,7 +66,55 @@
         "url": "https://www.redfieldresources.com.au/careers/fifo-drillers-offsider-labourer-starting-on-42-50-minimum/",
         "publisherHint": "redfieldresources.com.au",
         "snippet": "As a Drillers Offsider you will be supporting the driller with general operations duties: ... Reside in Perth WA, as this role is FIFO from Perth Airport.",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
+        "capturedAt": "2026-05-17T08:17:42.938Z"
+      }
+    },
+    {
+      "roleId": "drillers-offsider",
+      "roleTitle": "Driller's Offsider",
+      "changeType": "new_source",
+      "proposedValue": {
+        "url": "https://au.indeed.com/q-entry-level-drillers-offsider-l-western-australia-jobs.html",
+        "publisher": "au.indeed.com"
+      },
+      "confidence": 0.65,
+      "evidence": {
+        "url": "https://au.indeed.com/q-entry-level-drillers-offsider-l-western-australia-jobs.html",
+        "publisherHint": "au.indeed.com",
+        "snippet": "Salary Search: Underground Drillers Offsider | FIFO from Perth salaries in Perth WA",
+        "capturedAt": "2026-05-17T08:17:42.938Z"
+      }
+    },
+    {
+      "roleId": "drillers-offsider",
+      "roleTitle": "Driller's Offsider",
+      "changeType": "new_source",
+      "proposedValue": {
+        "url": "https://au.indeed.com/q-driller-offsider-fifo-jobs.html",
+        "publisher": "au.indeed.com"
+      },
+      "confidence": 0.65,
+      "evidence": {
+        "url": "https://au.indeed.com/q-driller-offsider-fifo-jobs.html",
+        "publisherHint": "au.indeed.com",
+        "snippet": "Swick Mining Services Swick Mining Services is one of the world’s largest mineral drilling contractors, specialising in underground diamond drilling at multiple sites around Australia as well as Internationally. We are seeking candidates with recent physical labouring experience &amp; who are currently based in WA to join our team in this entry level position. As a FIFO underground diamond drillers offsider, you are required to be physically fit, hardworking and reliable.",
+        "capturedAt": "2026-05-17T08:17:42.938Z"
+      }
+    },
+    {
+      "roleId": "drillers-offsider",
+      "roleTitle": "Driller's Offsider",
+      "changeType": "new_source",
+      "proposedValue": {
+        "url": "https://au.jora.com/s/WA/Drillers-Offsider-salary",
+        "publisher": "au.jora.com"
+      },
+      "confidence": 0.75,
+      "evidence": {
+        "url": "https://au.jora.com/s/WA/Drillers-Offsider-salary",
+        "publisherHint": "au.jora.com",
+        "snippet": "The average salary for Drillers Offsider jobs in Western Australia is <strong>$123,000 per year</strong>.",
+        "capturedAt": "2026-05-17T08:17:42.938Z"
       }
     },
     {
@@ -162,7 +130,7 @@
         "url": "https://au.indeed.com/Driller-Offsider-Fifo-jobs",
         "publisherHint": "au.indeed.com",
         "snippet": "Experienced offsiders and Trainee&#x27;s highly sought after. Accepting and acting on instructions from the driller in a safe and timely manner. View all Topdrill jobs - Kalgoorlie jobs - Driller jobs in Kalgoorlie WA · Salary Search: Driller Traineeship salaries in Kalgoorlie WA · With over 25 years success in the mining industry, Bostech offers a positive entry into this highly competitive area. FIFO/DIDO role ex-Perth.",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
+        "capturedAt": "2026-05-17T08:17:42.938Z"
       }
     },
     {
@@ -170,15 +138,15 @@
       "roleTitle": "Driller's Offsider",
       "changeType": "new_source",
       "proposedValue": {
-        "url": "https://www.seek.com.au/driller-offsider-fifo-jobs",
-        "publisher": "seek.com.au"
+        "url": "https://au.indeed.com/q-drillers-offsider-l-western-australia-jobs.html",
+        "publisher": "au.indeed.com"
       },
       "confidence": 0.65,
       "evidence": {
-        "url": "https://www.seek.com.au/driller-offsider-fifo-jobs",
-        "publisherHint": "seek.com.au",
-        "snippet": "Entry Level Traineeships! Kick-start your career with DDH1 Drilling and a <strong>six-figure salary</strong>! Kick-start your career with DDH1 Drilling and a <strong>six-figure salary</strong>! subClassification: Mining - Drill &amp; BlastMining - Drill &amp; Blast · classification: ...",
-        "capturedAt": "2026-04-28T19:44:22.038Z"
+        "url": "https://au.indeed.com/q-drillers-offsider-l-western-australia-jobs.html",
+        "publisherHint": "au.indeed.com",
+        "snippet": "Salary Search: Driller Traineeship salaries in Kalgoorlie WA · WA Applicants for Drillers and Experienced offsiders will be fast tracked! FIFO Positions available, all meals and accommodation provided.",
+        "capturedAt": "2026-05-17T08:17:42.938Z"
       }
     },
     {
@@ -194,7 +162,23 @@
         "url": "https://au.indeed.com/q-traineeship,-fifo-dump-truck-operators-l-western-australia-jobs.html",
         "publisherHint": "au.indeed.com",
         "snippet": "Proven minimum 12+ months of previous ... Search: Mining Operators salaries in Perth WA · Operating either a KOMASTU 785 or 1500, on an <strong>8:6 | 7:7 rotating dayshift/nightshift roster</strong> that provides continuous coverage....",
-        "capturedAt": "2026-04-28T19:44:22.266Z"
+        "capturedAt": "2026-05-17T08:17:43.426Z"
+      }
+    },
+    {
+      "roleId": "dump-truck-operator-trainee",
+      "roleTitle": "Dump Truck Operator (Trainee)",
+      "changeType": "new_source",
+      "proposedValue": {
+        "url": "https://au.indeed.com/q-traineeship,-fifo-dump-truck-jobs.html",
+        "publisher": "au.indeed.com"
+      },
+      "confidence": 0.75,
+      "evidence": {
+        "url": "https://au.indeed.com/q-traineeship,-fifo-dump-truck-jobs.html",
+        "publisherHint": "au.indeed.com",
+        "snippet": "Due to the expansion of our fleet, we are seeking expressions of interest from Dump Truck Operators who have a strong safety-focus, is aligned to our vision and values, and has experience in mine production. Operating either a KOMASTU 785 or 1500, on an 8:6 | 7:7 rotating dayshift/nightshift roster that provides continuous coverage. FIFO from Perth or DIDO from Kalgoorlie.",
+        "capturedAt": "2026-05-17T08:17:43.426Z"
       }
     },
     {
@@ -210,7 +194,7 @@
         "url": "https://au.indeed.com/q-traineeship,-fifo-dump-truck-operators-l-western-australia-jobs.html",
         "publisherHint": "au.indeed.com",
         "snippet": "Proven minimum 12+ months of previous ... Search: Mining Operators salaries in Perth WA · Operating either a KOMASTU 785 or 1500, on an <strong>8:6 | 7:7 rotating dayshift/nightshift roster</strong> that provides continuous coverage....",
-        "capturedAt": "2026-04-28T19:44:22.266Z"
+        "capturedAt": "2026-05-17T08:17:43.426Z"
       }
     },
     {
@@ -220,12 +204,12 @@
       "proposedValue": [
         "2:1"
       ],
-      "confidence": 1,
+      "confidence": 0.75,
       "evidence": {
-        "url": "https://au.indeed.com/q-traineeship,-fifo-dump-truck-operators-$70,000-l-western-australia-jobs.html",
+        "url": "https://au.indeed.com/Traineeship,-Fifo-Dump-Truck-Operators-jobs-in-Western-Australia",
         "publisherHint": "au.indeed.com",
-        "snippet": "As our next Dump Truck Operator to proudly represent our Production Mining Team, you will live for challenges and thrive on the variety of work available. Like all of us at Thiess, you’re a passionate and energetic person, that appreciates responsibility, recognition and reward. 2:1 roster (7D7N7RR) - FIFO Perth to Iron Bridge Mine",
-        "capturedAt": "2026-04-28T19:44:22.266Z"
+        "snippet": "Salary Search: Dump truck operator salaries in Perth WA · See popular questions &amp; answers about Aurenne Group Mining · Proven experience operating large haul trucks. $56-$63/hr + weekly pay - long-term FIFO dump truck roles. 2:1 roster FIFO from Perth - operate CAT, Komatsu &amp;…",
+        "capturedAt": "2026-05-17T08:17:43.426Z"
       }
     },
     {
@@ -241,39 +225,23 @@
         "url": "https://au.indeed.com/q-traineeship,-fifo-dump-truck-operators-$70,000-l-western-australia-jobs.html",
         "publisherHint": "au.indeed.com",
         "snippet": "As our next Dump Truck Operator to proudly represent our Production Mining Team, you will live for challenges and thrive on the variety of work available. Like all of us at Thiess, you’re a passionate and energetic person, that appreciates responsibility, recognition and reward. 2:1 roster (7D7N7RR) - FIFO Perth to Iron Bridge Mine",
-        "capturedAt": "2026-04-28T19:44:22.266Z"
+        "capturedAt": "2026-05-17T08:17:43.426Z"
       }
     },
     {
-      "roleId": "trade-assistant",
-      "roleTitle": "Trade Assistant",
+      "roleId": "dump-truck-operator-trainee",
+      "roleTitle": "Dump Truck Operator (Trainee)",
       "changeType": "new_source",
       "proposedValue": {
-        "url": "https://www.seek.com.au/trade-assistant-fifo-jobs",
-        "publisher": "seek.com.au"
+        "url": "https://au.indeed.com/Traineeship,-Fifo-Dump-Truck-Operators-jobs-in-Western-Australia",
+        "publisher": "au.indeed.com"
       },
-      "confidence": 0.65,
+      "confidence": 0.75,
       "evidence": {
-        "url": "https://www.seek.com.au/trade-assistant-fifo-jobs",
-        "publisherHint": "seek.com.au",
-        "snippet": "Programmed are currently seeking ... classification: Mining, Resources &amp; Energy(Mining, Resources &amp; Energy) ... <strong>Trade Assistant required for ongoing FIFO work</strong>....",
-        "capturedAt": "2026-04-28T19:44:22.429Z"
-      }
-    },
-    {
-      "roleId": "trade-assistant",
-      "roleTitle": "Trade Assistant",
-      "changeType": "new_source",
-      "proposedValue": {
-        "url": "https://www.seek.com.au/trade-assistant-fifo-jobs/in-All-Perth-WA",
-        "publisher": "seek.com.au"
-      },
-      "confidence": 0.65,
-      "evidence": {
-        "url": "https://www.seek.com.au/trade-assistant-fifo-jobs/in-All-Perth-WA",
-        "publisherHint": "seek.com.au",
-        "snippet": "Find your ideal job at SEEK with 1300 Trade Assistant Fifo jobs found in All Perth WA. View all our Trade Assistant Fifo vacancies now with new jobs added daily!",
-        "capturedAt": "2026-04-28T19:44:22.429Z"
+        "url": "https://au.indeed.com/Traineeship,-Fifo-Dump-Truck-Operators-jobs-in-Western-Australia",
+        "publisherHint": "au.indeed.com",
+        "snippet": "Salary Search: Dump truck operator salaries in Perth WA · See popular questions &amp; answers about Aurenne Group Mining · Proven experience operating large haul trucks. $56-$63/hr + weekly pay - long-term FIFO dump truck roles. 2:1 roster FIFO from Perth - operate CAT, Komatsu &amp;…",
+        "capturedAt": "2026-05-17T08:17:43.426Z"
       }
     },
     {
@@ -289,7 +257,39 @@
         "url": "https://au.indeed.com/q-fifo,-trade-assistant-l-western-australia-jobs.html",
         "publisherHint": "au.indeed.com",
         "snippet": "Salary Search: Trade Assistant - SMP salaries in Karratha WA ... Current Drivers Licence – HR or above preferred. We’re offering permanent full-time positions on a 2/1 roster with day and night shift rotation. View all Mineral Resources jobs - Newman jobs - Loader Operator jobs in Newman WA · Salary Search: Loader Operators – FIFO ...",
-        "capturedAt": "2026-04-28T19:44:22.429Z"
+        "capturedAt": "2026-05-17T08:17:43.970Z"
+      }
+    },
+    {
+      "roleId": "trade-assistant",
+      "roleTitle": "Trade Assistant",
+      "changeType": "new_source",
+      "proposedValue": {
+        "url": "https://www.seek.com.au/trade-assistant-fifo-jobs/in-All-Perth-WA",
+        "publisher": "seek.com.au"
+      },
+      "confidence": 0.65,
+      "evidence": {
+        "url": "https://www.seek.com.au/trade-assistant-fifo-jobs/in-All-Perth-WA",
+        "publisherHint": "seek.com.au",
+        "snippet": "Find your ideal job at SEEK with 1300 Trade Assistant Fifo jobs found in All Perth WA. View all our Trade Assistant Fifo vacancies now with new jobs added daily!",
+        "capturedAt": "2026-05-17T08:17:43.970Z"
+      }
+    },
+    {
+      "roleId": "trade-assistant",
+      "roleTitle": "Trade Assistant",
+      "changeType": "new_source",
+      "proposedValue": {
+        "url": "https://www.seek.com.au/trade-assistant-fifo-jobs",
+        "publisher": "seek.com.au"
+      },
+      "confidence": 0.65,
+      "evidence": {
+        "url": "https://www.seek.com.au/trade-assistant-fifo-jobs",
+        "publisherHint": "seek.com.au",
+        "snippet": "Programmed are currently seeking ... classification: Mining, Resources &amp; Energy(Mining, Resources &amp; Energy) ... <strong>Trade Assistant required for ongoing FIFO work</strong>....",
+        "capturedAt": "2026-05-17T08:17:43.970Z"
       }
     },
     {
@@ -305,23 +305,7 @@
         "url": "https://www.seek.com.au/fifo-trade-assistant-jobs/in-All-Perth-WA",
         "publisherHint": "seek.com.au",
         "snippet": "Expressions of Interest from experienced FIFO trades for an upcoming mining Brownfields reactivation project. subClassification: Mining - Engineering &amp; MaintenanceMining - Engineering &amp; Maintenance · classification: Mining, Resources &amp; Energy(Mining, Resources &amp; Energy) ... Seeking Experienced Offshore Trade Assistants to work on Oil Rig Shutdown off WA coast for approximately 2 months",
-        "capturedAt": "2026-04-28T19:44:22.429Z"
-      }
-    },
-    {
-      "roleId": "trade-assistant",
-      "roleTitle": "Trade Assistant",
-      "changeType": "new_source",
-      "proposedValue": {
-        "url": "https://au.jooble.org/jobs-fifo-trade-assistant/Western-Australia",
-        "publisher": "au.jooble.org"
-      },
-      "confidence": 0.65,
-      "evidence": {
-        "url": "https://au.jooble.org/jobs-fifo-trade-assistant/Western-Australia",
-        "publisherHint": "au.jooble.org",
-        "snippet": "Serviceman/ Trades Assistant - Diggers ***Daltech does not offer visas or sponsorship, must... ...Fields | Southwest Employment Type: Casual Roster Options: FIFO from Perth or Remote Residential with site travel Pay Rate: $... ... ...respected company? Wallis Drilling are seeking a Yard Person / Trade Assistant to join our team and support our Newman operations.",
-        "capturedAt": "2026-04-28T19:44:22.429Z"
+        "capturedAt": "2026-05-17T08:17:43.970Z"
       }
     },
     {
@@ -337,7 +321,23 @@
         "url": "https://miningemployment.com.au/sb17885-trade-assistant",
         "publisherHint": "miningemployment.com.au",
         "snippet": "Our client is an ASX listed company currently seeking a well-qualified Trades Assistant for their Copper Mine in Western Australia. FIFO Perth 8:6",
-        "capturedAt": "2026-04-28T19:44:22.429Z"
+        "capturedAt": "2026-05-17T08:17:43.970Z"
+      }
+    },
+    {
+      "roleId": "trade-assistant",
+      "roleTitle": "Trade Assistant",
+      "changeType": "new_source",
+      "proposedValue": {
+        "url": "https://au.indeed.com/q-fifo,trade-assistant-l-perth-wa-jobs.html",
+        "publisher": "au.indeed.com"
+      },
+      "confidence": 0.65,
+      "evidence": {
+        "url": "https://au.indeed.com/q-fifo,trade-assistant-l-perth-wa-jobs.html",
+        "publisherHint": "au.indeed.com",
+        "snippet": "View all Gypsy Liners jobs - Canning Vale jobs - Trade Assistant jobs in Canning Vale WA · Salary Search: Trade Assistant - Shutdowns salaries in Canning Vale WA · Must have a current MSIC card, or be willing to apply immediately. This is a FIFO position with <strong>12-hour day shifts</strong>.",
+        "capturedAt": "2026-05-17T08:17:43.970Z"
       }
     }
   ]
